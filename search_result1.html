@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search Results</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+body{
+    background:#EEF4FB;
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    color:white;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+header h1{
+
+    font-size:40px;
+    letter-spacing:2px;
+
+}
+
+header p{
+
+    margin-top:10px;
+    font-size:18px;
+
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+    width:95%;
+    margin:35px auto;
+
+}
+
+/* ================= TABLE ================= */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+}
+
+table th{
+
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    color:white;
+    padding:16px;
+    font-size:20px;
+
+}
+
+table td{
+
+    padding:15px;
+    text-align:center;
+    font-size:18px;
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+table tr:nth-child(even){
+
+    background:#F8FAFC;
+
+}
+
+table tr:hover{
+
+    background:#DBEAFE;
+    transition:.3s;
+
+}
+
+/* ================= NO RESULT ================= */
+
+.message{
+
+    background:white;
+    width:60%;
+    margin:40px auto;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    color:#DC2626;
+    font-size:24px;
+    font-weight:bold;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+
+    text-align:center;
+    margin-top:35px;
+
+}
+
+.buttons a{
+
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    padding:14px 30px;
+    margin:10px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.35s;
+
+}
+
+/* Search Again */
+
+.search{
+
+    background:linear-gradient(135deg,#2563EB,#1E3A8A);
+
+}
+
+.search:hover{
+
+    background:linear-gradient(135deg,#1D4ED8,#1E40AF);
+    transform:translateY(-3px);
+
+}
+
+/* Dashboard */
+
+.dashboard{
+
+    background:linear-gradient(135deg,#10B981,#059669);
+
+}
+
+.dashboard:hover{
+
+    background:linear-gradient(135deg,#059669,#047857);
+    transform:translateY(-3px);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Search Results</h1>
+
+</header>
+
+<div class="container">
+
+{% if books %}
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Title</th>
+<th>Author</th>
+<th>Category</th>
+<th>Total Books</th>
+<th>Available Books</th>
+
+</tr>
+
+{% for book in books %}
+
+<tr>
+
+<td>{{ book.id }}</td>
+<td>{{ book.title }}</td>
+<td>{{ book.author }}</td>
+<td>{{ book.category }}</td>
+<td>{{ book.total_count }}</td>
+<td>{{ book.available_count }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% else %}
+
+<div class="message">
+
+No Books Found.
+
+</div>
+
+{% endif %}
+
+<div class="buttons">
+
+<a href="{{ url_for('search_book') }}" class="search">
+
+Search Again
+
+</a>
+
+<a href="{{ url_for('admin_dashboard') }}" class="dashboard">
+
+Back to Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

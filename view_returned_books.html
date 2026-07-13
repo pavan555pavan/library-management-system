@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Returned Books</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+body{
+    background:#EEF4FB;
+    color:#1F2937;
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    color:white;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+header h1{
+
+    font-size:40px;
+    letter-spacing:2px;
+
+}
+
+header p{
+
+    margin-top:8px;
+    font-size:18px;
+
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+    width:95%;
+    margin:35px auto;
+
+}
+
+/* ================= TABLE ================= */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+}
+
+th{
+
+    background:linear-gradient(135deg,#10B981,#059669);
+    color:white;
+    padding:16px;
+    font-size:20px;
+
+}
+
+td{
+
+    padding:15px;
+    text-align:center;
+    font-size:18px;
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+tr:nth-child(even){
+
+    background:#F8FAFC;
+
+}
+
+tr:hover{
+
+    background:#DCFCE7;
+    transition:.3s;
+
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back{
+
+    margin-top:30px;
+    text-align:center;
+
+}
+
+.back a{
+
+    display:inline-block;
+    text-decoration:none;
+    background:linear-gradient(135deg,#2563EB,#1E3A8A);
+    color:white;
+    padding:13px 30px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.35s;
+    box-shadow:0 8px 18px rgba(37,99,235,.35);
+
+}
+
+.back a:hover{
+
+    background:linear-gradient(135deg,#1D4ED8,#1E40AF);
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(37,99,235,.50);
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:45px;
+    background:#1E3A8A;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:18px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.container{
+
+    width:98%;
+    overflow-x:auto;
+
+}
+
+table{
+
+    font-size:15px;
+
+}
+
+header h1{
+
+    font-size:30px;
+
+}
+
+.back a{
+
+    width:90%;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>📥 Returned Books</h1>
+
+</header>
+
+<div class="container">
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Student Name</th>
+<th>Book Title</th>
+<th>Return Date</th>
+
+</tr>
+
+{% for book in books %}
+
+<tr>
+
+<td>{{ book.id }}</td>
+
+<td>{{ book.student_name }}</td>
+
+<td>{{ book.book_title }}</td>
+
+<td>{{ book.return_date }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="back">
+
+<a href="/admin-dashboard">
+
+⬅ Back to Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+Library Management System © 2026
+
+</footer>
+
+</body>
+</html>

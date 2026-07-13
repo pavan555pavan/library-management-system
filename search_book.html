@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search Book</title>
+
+<style>
+
+   *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#1E3A8A,#3B82F6,#DBEAFE);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/* ================= SEARCH BOX ================= */
+
+.container{
+
+    width:430px;
+    background:rgba(255,255,255,.95);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    text-align:center;
+    transition:.4s;
+
+}
+
+.container:hover{
+
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,.30);
+
+}
+
+/* ================= ICON ================= */
+
+.icon{
+
+    font-size:65px;
+    color:#1E3A8A;
+    margin-bottom:15px;
+
+}
+
+/* ================= TITLE ================= */
+
+h2{
+
+    color:#1E3A8A;
+    font-size:34px;
+    margin-bottom:15px;
+
+}
+
+p{
+
+    color:#555;
+    margin-bottom:25px;
+    font-size:18px;
+
+}
+
+/* ================= INPUT ================= */
+
+input[type=text]{
+
+    width:100%;
+    padding:14px;
+    margin:20px 0;
+    border:2px solid #CBD5E1;
+    border-radius:10px;
+    font-size:18px;
+    outline:none;
+    transition:.3s;
+    background:#F8FAFC;
+
+}
+
+input[type=text]:focus{
+
+    border-color:#2563EB;
+    background:white;
+    box-shadow:0 0 10px rgba(37,99,235,.35);
+
+}
+
+/* ================= SEARCH BUTTON ================= */
+
+button{
+
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#2563EB,#1E3A8A);
+    color:white;
+    font-size:19px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 8px 18px rgba(37,99,235,.35);
+
+}
+
+button:hover{
+
+    background:linear-gradient(135deg,#1D4ED8,#1E40AF);
+    transform:translateY(-3px);
+
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back{
+
+    margin-top:25px;
+
+}
+
+.back a{
+
+    display:inline-block;
+    text-decoration:none;
+    background:linear-gradient(135deg,#10B981,#059669);
+    color:white;
+    padding:12px 30px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.35s;
+
+}
+
+.back a:hover{
+
+    background:linear-gradient(135deg,#059669,#047857);
+    transform:translateY(-3px);
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:500px){
+
+.container{
+
+    width:92%;
+    padding:30px;
+
+}
+
+h2{
+
+    font-size:28px;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🔍 Search Books</h1>
+
+</header>
+
+<div class="container">
+
+<h2>Search Book</h2>
+
+<form action="/search-book" method="POST">
+
+<label>Enter Book Title / Author / Category</label>
+
+<input
+type="text"
+name="keyword"
+placeholder="Search..."
+required>
+
+<button type="submit">
+
+Search Book
+
+</button>
+
+</form>
+
+<div class="back">
+
+
+
+<a href="/user-dashboard">
+
+⬅ Back to Dashboard
+
+</a>
+
+
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>
+
+Library Management System © 2026
+
+</h3>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Issue Book</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+body{
+    background:#EEF4FB;
+    color:#1F2937;
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    color:white;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+header h1{
+
+    font-size:40px;
+    letter-spacing:2px;
+
+}
+
+header p{
+
+    margin-top:8px;
+    font-size:18px;
+
+}
+
+/* ================= FORM CONTAINER ================= */
+
+.container{
+
+    width:45%;
+    margin:45px auto;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    transition:.4s;
+
+}
+
+.container:hover{
+
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,.20);
+
+}
+
+/* ================= TITLE ================= */
+
+h2{
+
+    text-align:center;
+    color:#1E3A8A;
+    font-size:34px;
+    margin-bottom:30px;
+
+}
+
+/* ================= LABELS ================= */
+
+label{
+
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-size:20px;
+    font-weight:bold;
+    color:#1E3A8A;
+
+}
+
+/* ================= INPUTS ================= */
+
+input{
+
+    width:100%;
+    padding:14px;
+    border:2px solid #CBD5E1;
+    border-radius:10px;
+    font-size:18px;
+    outline:none;
+    background:#F8FAFC;
+    transition:.3s;
+
+}
+
+input:focus{
+
+    border-color:#2563EB;
+    background:white;
+    box-shadow:0 0 10px rgba(37,99,235,.35);
+
+}
+
+/* ================= SUBMIT BUTTON ================= */
+
+button{
+
+    width:100%;
+    margin-top:30px;
+    padding:15px;
+    border:none;
+    border-radius:35px;
+    background:linear-gradient(135deg,#10B981,#059669);
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 8px 18px rgba(16,185,129,.35);
+
+}
+
+button:hover{
+
+    background:linear-gradient(135deg,#059669,#047857);
+    transform:translateY(-4px);
+    box-shadow:0 12px 24px rgba(16,185,129,.50);
+
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back{
+
+    margin-top:25px;
+    text-align:center;
+
+}
+
+.back a{
+
+    display:inline-block;
+    text-decoration:none;
+    background:linear-gradient(135deg,#2563EB,#1E3A8A);
+    color:white;
+    padding:12px 28px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.35s;
+    box-shadow:0 8px 18px rgba(37,99,235,.35);
+
+}
+
+.back a:hover{
+
+    background:linear-gradient(135deg,#1D4ED8,#1E40AF);
+    transform:translateY(-3px);
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:45px;
+    background:#1E3A8A;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:18px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.container{
+
+    width:90%;
+
+}
+
+header h1{
+
+    font-size:30px;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>📤 Issue Book</h1>
+
+</header>
+
+<div class="container">
+
+<h2>Issue a Book</h2>
+
+<form action="/issue-book" method="POST">
+
+<
+
+<label>Book Title</label>
+
+<input
+type="text"
+name="book_title"
+placeholder="Enter Book Title"
+required>
+
+<label>Issue Date</label>
+
+<input
+type="date"
+name="issue_date"
+required>
+
+<button type="submit">
+
+Issue Book
+
+</button>
+
+</form>
+
+<div class="back">
+
+<a href="/user-dashboard">
+
+⬅ Back to Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Library Management System © 2026</h3>
+
+</footer>
+
+</body>
+</html>

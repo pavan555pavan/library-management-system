@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>User Registration</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+body{
+
+    background:#EEF4FB;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+
+}
+
+/* ================= REGISTER BOX ================= */
+
+.register{
+
+    width:460px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+    transition:.4s;
+
+}
+
+.register:hover{
+
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+}
+
+/* ================= ICON ================= */
+
+.register-icon{
+
+    text-align:center;
+    font-size:60px;
+    color:#10B981;
+    margin-bottom:15px;
+
+}
+
+/* ================= TITLE ================= */
+
+h1{
+
+    text-align:center;
+    color:#1E3A8A;
+    font-size:36px;
+    margin-bottom:10px;
+
+}
+
+p{
+
+    text-align:center;
+    color:#6B7280;
+    font-size:18px;
+    margin-bottom:30px;
+
+}
+
+/* ================= LABEL ================= */
+
+label{
+
+    display:block;
+    margin-bottom:8px;
+    font-size:19px;
+    font-weight:bold;
+    color:#1E3A8A;
+
+}
+
+/* ================= INPUT ================= */
+
+input{
+
+    width:100%;
+    padding:14px;
+    margin-bottom:20px;
+    border:2px solid #CBD5E1;
+    border-radius:10px;
+    font-size:18px;
+    background:#F8FAFC;
+    outline:none;
+    transition:.3s;
+
+}
+
+input:focus{
+
+    border-color:#2563EB;
+    background:white;
+    box-shadow:0 0 10px rgba(37,99,235,.30);
+
+}
+
+/* ================= BUTTON ================= */
+
+button{
+
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:35px;
+    background:linear-gradient(135deg,#10B981,#059669);
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 8px 18px rgba(16,185,129,.35);
+
+}
+
+button:hover{
+
+    background:linear-gradient(135deg,#059669,#047857);
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(16,185,129,.50);
+
+}
+
+/* ================= LINKS ================= */
+
+.links{
+
+    margin-top:25px;
+    text-align:center;
+
+}
+
+.links a{
+
+    display:block;
+    margin-top:15px;
+    text-decoration:none;
+    color:#2563EB;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+
+}
+
+.links a:hover{
+
+    color:#059669;
+    text-decoration:underline;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:500px){
+
+.register{
+
+    width:92%;
+    padding:30px;
+
+}
+
+.register-icon{
+
+    font-size:50px;
+
+}
+
+h1{
+
+    font-size:30px;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="register">
+
+<h1>👨‍🎓 User Registration</h1>
+
+<form action="/user-register" method="POST">
+
+<label>Full Name</label>
+
+<input
+type="text"
+name="fullname"
+required>
+
+<label>Username</label>
+
+<input
+type="text"
+name="username"
+required>
+
+<label>Password</label>
+
+<input
+type="password"
+name="password"
+required>
+
+<button type="submit">
+
+Register
+
+</button>
+
+</form>
+
+<div class="links">
+
+<a href="/user-login">
+
+Already Registered? Login
+
+</a>
+
+<a href="/">
+
+⬅ Back to Home
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

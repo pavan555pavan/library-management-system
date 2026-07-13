@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>User Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+body{
+    background:#EEF4FB;
+    color:#1F2937;
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    color:white;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+header h1{
+
+    font-size:42px;
+    letter-spacing:2px;
+
+}
+
+header p{
+
+    margin-top:8px;
+    font-size:18px;
+
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    padding:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+
+}
+
+nav a{
+
+    color:#1E3A8A;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    position:relative;
+    transition:.3s;
+
+}
+
+nav a::after{
+
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:3px;
+    background:#2563EB;
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#2563EB;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+    width:90%;
+    margin:40px auto;
+
+}
+
+/* ================= WELCOME CARD ================= */
+
+.card{
+
+    background:white;
+    padding:45px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card h1{
+
+    color:#1E3A8A;
+    font-size:38px;
+    margin-top:20px;
+
+}
+
+.card p{
+
+    margin-top:15px;
+    font-size:20px;
+    color:#555;
+    line-height:30px;
+
+}
+
+/* ================= DASHBOARD OPTIONS ================= */
+
+.options{
+
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+
+}
+
+.option{
+
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.35s;
+
+}
+
+.option:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.22);
+
+}
+
+.option i{
+
+    font-size:50px;
+    color:#2563EB;
+    margin-bottom:18px;
+
+}
+
+.option h3{
+
+    color:#1E3A8A;
+    margin-bottom:15px;
+    font-size:28px;
+
+}
+
+.option p{
+
+    color:#555;
+    line-height:28px;
+    margin-bottom:20px;
+    font-size:18px;
+
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+
+    display:inline-block;
+    padding:14px 30px;
+    background:linear-gradient(135deg,#10B981,#059669);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.35s;
+    box-shadow:0 8px 18px rgba(16,185,129,.35);
+
+}
+
+.btn:hover{
+
+    background:linear-gradient(135deg,#059669,#047857);
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(16,185,129,.50);
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:50px;
+    background:#1E3A8A;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:18px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+header h1{
+
+    font-size:30px;
+
+}
+
+nav{
+
+    flex-direction:column;
+    gap:15px;
+
+}
+
+.container{
+
+    width:95%;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>User Dashboard</h1>
+
+<p>Welcome {{ session['user'] }}</p>
+
+</header>
+
+<nav>
+
+<a href="/user-dashboard">Dashboard</a>
+
+<a href="/user-view-books">View Books</a>
+
+<a href="/search-book">Search</a>
+
+<a href="/issue-book">Issue Book</a>
+
+<a href="/return-book">Return Book</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Available Books</h2>
+
+<h1>{{ available_books }}</h1>
+
+</div>
+
+<div class="options">
+
+<div class="option">
+
+<h2>📚 View Books</h2>
+
+<a href="/user-view-books" class="btn">
+
+view books
+
+</a>
+
+</div>
+<div class="option">
+
+<h2>📚 My Issued Books</h2>
+
+<p>View all the books you have currently issued.</p>
+
+<a href="/my-issued-books" class="btn">
+
+Open
+
+</a>
+
+</div>
+
+<div class="option">
+
+<h2>🔍 Search Book</h2>
+
+<a href="/search-book" class="btn">
+
+Open
+
+</a>
+
+</div>
+
+<div class="option">
+
+<h2>📤 Issue Book</h2>
+
+<a href="/issue-book" class="btn">
+
+Open
+
+</a>
+
+</div>
+
+<div class="option">
+
+<h2>📥 Return Book</h2>
+
+<a href="/return-book" class="btn">
+
+Open
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+Library Management System © 2026
+
+</footer>
+
+</body>
+</html>

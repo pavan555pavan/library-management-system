@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#1E3A8A,#3B82F6,#93C5FD);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+
+}
+
+/* Login Box */
+
+.login-box{
+
+    width:430px;
+    background:rgba(255,255,255,.95);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+    transition:.4s;
+
+}
+
+.login-box:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* Icon */
+
+.icon{
+
+    text-align:center;
+    font-size:65px;
+    color:#1E3A8A;
+    margin-bottom:15px;
+
+}
+
+/* Heading */
+
+h1{
+
+    text-align:center;
+    color:#1E3A8A;
+    font-size:36px;
+    margin-bottom:10px;
+
+}
+
+p{
+
+    text-align:center;
+    color:#555;
+    font-size:17px;
+    margin-bottom:30px;
+
+}
+
+/* Labels */
+
+label{
+
+    font-size:18px;
+    font-weight:bold;
+    color:#1F2937;
+
+}
+
+/* Inputs */
+
+input{
+
+    width:100%;
+    padding:14px;
+    margin-top:8px;
+    margin-bottom:22px;
+    border:2px solid #CBD5E1;
+    border-radius:10px;
+    font-size:17px;
+    transition:.3s;
+    outline:none;
+
+}
+
+input:focus{
+
+    border-color:#2563EB;
+    box-shadow:0 0 10px rgba(37,99,235,.30);
+
+}
+
+/* Login Button */
+
+button{
+
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#10B981,#059669);
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 8px 18px rgba(16,185,129,.35);
+
+}
+
+button:hover{
+
+    background:linear-gradient(135deg,#059669,#047857);
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(16,185,129,.50);
+
+}
+
+/* Links */
+
+.links{
+
+    text-align:center;
+    margin-top:25px;
+
+}
+
+.links a{
+
+    display:block;
+    margin-top:12px;
+    color:#1E3A8A;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:bold;
+    transition:.3s;
+
+}
+
+.links a:hover{
+
+    color:#2563EB;
+    transform:scale(1.05);
+
+}
+
+/* Responsive */
+
+@media(max-width:500px){}
+
+.login-box{
+
+    width:92%;
+    padding:30px;
+
+}
+
+h1{
+
+    font-size:30px;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h1>👨‍💼 Admin Login</h1>
+
+<p>Login to manage the library.</p>
+
+<form action="/admin-login" method="POST">
+
+<label>Username</label>
+
+<input
+type="text"
+name="username"
+placeholder="Enter Username"
+required>
+
+<label>Password</label>
+
+<input
+type="password"
+name="password"
+placeholder="Enter Password"
+required>
+
+<button type="submit">
+
+Login
+
+</button>
+
+</form>
+
+<div class="links">
+
+<a href="/admin-register">
+
+Create New Admin Account
+
+</a>
+
+<a href="/">
+
+⬅ Back to Home
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
